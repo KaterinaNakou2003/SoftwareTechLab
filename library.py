@@ -93,66 +93,62 @@ class Library:
             print("4. Delete a book")
             print("5. exit")
             print("Please press a number!!")
-            number = input()
-            if isinstance(number,int) and number == 1:
+            try:
+                number = int(input())
+            except ValueError:
+                print("Error: Input is not an integer.Please try again!")
+                continue
+            if number == 1:
                 print("Please enter the 1 to enter the title or 2 to enter the writer of the book")
                 nu = int(input())
-                if isinstance(number,int) and number == 1:
+                if number == 1:
                     print("Please enter the title of the book:")
                     title = input()
-                    self.read_book(self, title, None)
-                elif isinstance(number,int) and number == 2:
+                    self.read_book(title, None)
+                elif number == 2:
                     print("Please enter the writer of the book:")
                     writer = input()
-                    self.read_book(self, None, writer)
+                    self.read_book(None, writer)
                 else:
                     print("There has been an error. Please try again!")
-                    self.menu(self)
-            elif isinstance(number,int) and number == 2:
-                self.add_book(self)
-            elif isinstance(number,int) and number == 3:
+            elif  number == 2:
+                self.add_book()
+            elif number == 3:
                 print("Please enter the 1 to enter the title or 2 to enter the writer of the book you want to update")
                 nu = int(input())
-                if isinstance(number,int): 
-                    if number == 1:
-                        print("Please enter the title of the book:")
-                        title = input()
-                        id = self.find_book(self, title, None)
-                    elif number == 2:
-                        print("Please enter the writer of the book:")
-                        writer = input()
-                        id = self.find_book(self, None, writer)
-                    if id == 0:
-                        print("There has been an error. Please try again!")
-                        self.menu(self)
-                    else:
-                        self.update_book(self,id)
-                else:
-                    print("There has been an error. Please try again!")
-                    self.menu(self)
-            elif isinstance(number,int) and number == 4:
-                print("Please enter the 1 to enter the title or 2 to enter the writer of the book")
-                nu = int(input())
-                if isinstance(number,int) and number == 1:
+                if number == 1:
                     print("Please enter the title of the book:")
                     title = input()
-                    if ( self.delete_book(self, title, None) == 0) :
+                    id = self.find_book(title, None)
+                elif number == 2:
+                    print("Please enter the writer of the book:")
+                    writer = input()
+                    id = self.find_book( None, writer)
+                if id == 0:
+                    print("There has been an error. Please try again!")
+                else:
+                    self.update_book(id)
+            elif number == 4:
+                print("Please enter the 1 to enter the title or 2 to enter the writer of the book")
+                nu = int(input())
+                if number == 1:
+                    print("Please enter the title of the book:")
+                    title = input()
+                    if ( self.delete_book(title, None) == 0) :
                         print("Could not delete the book!")
                     else:
                         print("Book deleted succesfully!")
-                elif isinstance(number,int) and number == 2:
+                elif number == 2:
                     print("Please enter the writer of the book:")
                     writer = input()
-                    self.delete_book(self, None, writer)
+                    self.delete_book(None, writer)
                 else:
                     print("There has been an error. Please try again!")
-                    self.menu(self)
-            elif isinstance(number,int) and number == 5:
+            elif number == 5:
                 print("Exiting...")
                 flag = False
             else:
                 print("There has been an error. Please try again!")
-                self.menu(self) 
 
 
 library = Library()
