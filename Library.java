@@ -1,7 +1,5 @@
 import java.util.Scanner;
 import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Map;
 
 class Library {
@@ -46,7 +44,7 @@ class Library {
 			Book book = books.get(bookId);
 			System.out.println("Title: " + book.getTitle());
 			System.out.println("Author: " + book.getWriter());
-			System.out.println("Year o the publishment: " + book.getYearPublished());
+			System.out.println("Year of the publishment: " + book.getYearPublished());
 			System.out.println("Summary: " + book.getSummary());
 		}
 	}
@@ -73,7 +71,7 @@ class Library {
 				Book info = books.get(bookId);
 				System.out.println("Do you want to change the title? yes/no");
 				String answer = input.nextLine();
-				if (answer == "yes") {
+				if (answer.equals( "yes")) {
 					System.out.println("Enter title!");
 					title = input.nextLine();
 					info.setTitle(title);
@@ -81,7 +79,7 @@ class Library {
 				}
 				System.out.println("Do you want to change the author? yes/no");
 				answer = input.nextLine();
-				if (answer == "yes") {
+				if (answer.equals( "yes")) {
 					System.out.println("Enter author!");
 					writer = input.nextLine();
 					info.setWriter(writer);
@@ -89,24 +87,25 @@ class Library {
 				}
 				System.out.println("Do you want to change the year of publishment? yes/no");
 				answer = input.nextLine();
-				if (answer == "yes") {
+				if (answer.equals( "yes")) {
 					System.out.println("Enter year!");
 					int yearPublished = input.nextInt();
+					input.nextLine();
 					info.setYearPublished(yearPublished);
 					books.put(bookId, info);
 				}
 				System.out.println("Do you want to change the summary? yes/no");
 				answer = input.nextLine();
-				if (answer == "yes") {
+				if (answer.equals( "yes")) {
 					System.out.println("Enter summary!");
 					String summary = input.nextLine();
 					info.setSummary(summary);
 					books.put(bookId, info);
 				}
+				return 1;
 			} catch (Exception e) {
 				return 0;
-			}
-			return 1;
+			}			
 		}
 
 	}
@@ -114,18 +113,10 @@ class Library {
 	// returns bookId
 	public int findBook(String title, String writer) {
 		for (Map.Entry<Integer, Book> set :
-		             books.entrySet()) {
+		            books.entrySet()) {
 			Book info = set.getValue();
-			if (title != null) {
-				if (info.getTitle().equals(title)) {
-					return set.getKey();
-				}
-			} else if (writer != null) {
-				if (info.getWriter().equals(writer)) {
-					return set.getKey();
-				}
-			} else {
-				return 0;
+			if (  (writer != null && info.getWriter().equals(writer)) || (title != null && info.getTitle().equals(title))) {
+				return set.getKey();
 			}
 		}
 		return 0;
