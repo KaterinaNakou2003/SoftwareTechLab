@@ -97,11 +97,10 @@ class Handler {
 					System.out.println("There has been an error. Please try again!");
 				}
 			} catch (Exception e) {
-				System.out.print("There has been a problem... Please try again!!");
+				System.out.print("There has been a problem... Please try again!!" + e);
 				input.nextLine();
-
 			}
-
 		}
+		input.close();
 	}
 }
