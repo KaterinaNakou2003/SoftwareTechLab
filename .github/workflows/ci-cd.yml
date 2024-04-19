@@ -20,10 +20,7 @@ jobs:
           java-version: '8'
 
       - name: Build with Maven
-        run: mvn -f SoftwareTechLab/LibraryProject/pom.xml clean install
-
-      - name: Run Tests
-        run: mvn -f SoftwareTechLab/LibraryProject/pom.xml test
+        run: mvn -B package -f SoftwareTechLab/LibraryProject/pom.xml clean 
   
   deploy:
     runs-on: ubuntu-latest
@@ -33,6 +30,4 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Build and Package Application
-        run: mvn -f SoftwareTechLab/LibraryProject/pom.xml clean package
 
