@@ -5,19 +5,9 @@ on:
     branches: [ "development" ]
   pull_request:
     branches: [ "development" ]
-  workflow_dispatch:
-    inputs:
-      chosen-os:
-        required: true
-        type: choice
-        options:
-          - Ubuntu
-          - macOS
-          - Windows
-
 jobs:
   build:
-    runs-on: ${{ github.event.inputs.chosen-os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Debug Info
