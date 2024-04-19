@@ -13,4 +13,4 @@ To <i>run the container</i> run the command:
 
     $ docker run -i docker-library-jar
 
-If you do not have Docker installed, please visit the official Docker website  [Official Docker site](https://docs.docker.com/get-docker/) .
+If you do not have Docker installed, please visit the  [Official Docker site](https://docs.docker.com/get-docker/).
