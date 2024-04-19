@@ -22,10 +22,10 @@ jobs:
           NODE_VERSION: '20'
 
       - name: Build with Maven
-        run: mvn -file SoftwareTechLab/LibraryProject/pom.xml clean install
+        run: mvn -file LibraryProject/pom.xml clean install
 
       - name: Run Tests
-        run: mvn --file SoftwareTechLab/LibraryProject/pom.xml test
+        run: mvn --file LibraryProject/pom.xml test
   
   deploy:
     runs-on: ubuntu-latest
@@ -36,5 +36,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build and Package Application
-        run: mvn --file SoftwareTechLab/LibraryProject/pom.xml clean package
+        run: mvn --file LibraryProject/pom.xml clean package
 
