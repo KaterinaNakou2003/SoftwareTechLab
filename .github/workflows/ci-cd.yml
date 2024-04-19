@@ -20,6 +20,10 @@ jobs:
     runs-on: ${{ github.event.inputs.chosen-os }}
 
     steps:
+      - name: Debug Info
+        run: |
+          echo "Chosen OS: ${{ github.event.inputs.chosen-os }}"
+          env  # Print all environment variables for debugging
       - name: Checkout Repository
         uses: actions/checkout@v2
 
