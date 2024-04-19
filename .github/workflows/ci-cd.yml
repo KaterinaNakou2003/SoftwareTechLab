@@ -10,17 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug Info
-        run: |
-          echo "Chosen OS: ${{ github.event.inputs.chosen-os }}"
-          env  # Print all environment variables for debugging
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
           java-version: '8'
+          distribution: 'adopt'
 
       - name: Build with Maven
         run: mvn clean install
