@@ -11,8 +11,9 @@ jobs:
 
     steps:
       - name: Print Directory Contents
-        run: ls -R SoftwareTechLab
+        run: ls -R 
         shell: bash
+        
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
