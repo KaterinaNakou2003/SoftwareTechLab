@@ -15,6 +15,8 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
+        env:
+          NODE_VERSION: '20'
 
       - name: Build with Maven
         run: mvn clean install
