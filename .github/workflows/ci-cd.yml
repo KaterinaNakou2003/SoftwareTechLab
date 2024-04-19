@@ -10,13 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Change Working Directory
-        run: cd SoftwareTechLab
       - name: Print Current Working Directory
         run: pwd
+        
       - name: Print Directory Contents
         run: ls -R 
-        shell: bash
+        shell: bash   
+        
+      - name: Change Working Directory
+        run: cd SoftwareTechLab
+        
+      - name: Print Current Working Directory
+        run: pwd
+        
+      - name: Print Directory Contents
+        run: ls -R 
+        shell: bash   
         
       - name: Set up JDK
         uses: actions/setup-java@v2
