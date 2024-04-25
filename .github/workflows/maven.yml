@@ -31,12 +31,7 @@ jobs:
       run: mvn -B package --file LibraryProject/pom.xml
     - name: Run the Maven verify phase
       run: mvn --batch-mode --update-snapshots -f LibraryProject/pom.xml  verify
-  test:
-  
-    runs-on: ubuntu-latest
-    steps:
-    - name: Run Checkstyle
-      run: mvn --file LibraryProject/pom.xml checkstyle:checkstyle
+
     
 
 
