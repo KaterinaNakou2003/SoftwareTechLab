@@ -32,6 +32,14 @@ jobs:
     - name: Run the Maven verify phase
       run: mvn --batch-mode --update-snapshots -f LibraryProject/pom.xml  verify
 
+  test:
+    name: Additional Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run Checkstyle
+      run: mvn --file LibraryProject/pom.xml checkstyle:check
+
     
 
 
