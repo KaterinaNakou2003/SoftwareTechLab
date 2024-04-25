@@ -38,7 +38,7 @@ jobs:
 
     steps:
     - name: Run Checkstyle
-      run: mvn --file LibraryProject/pom.xml checkstyle:check
+      run: mvn checkstyle:check -f LibraryProject/pom.xml 
 
     
 
