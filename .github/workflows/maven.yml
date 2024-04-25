@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run Checkstyle
-      run: mvn -f LibraryProject/pom.xml checkstyle:checkstyle
+      run: mvn --file LibraryProject/pom.xml checkstyle:checkstyle
     
 
 
