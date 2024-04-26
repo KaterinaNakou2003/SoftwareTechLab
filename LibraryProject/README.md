@@ -1,5 +1,6 @@
-# SoftwareTechLab
+# The Library Project
 
+Here is an online Library. Find books of your liking! Add new books, remove old ones or modify them!
 
 ## Docker
 To build  and run the code locally within a Docker environment follow the instructions bellow.
