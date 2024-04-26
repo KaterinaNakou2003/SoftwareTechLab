@@ -37,9 +37,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Run Tests
-        run: mvn -f LibraryProject/pom.xml  test
+        run: mvn--file LibraryProject/pom.xml test
 
 
     
