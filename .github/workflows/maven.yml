@@ -31,14 +31,6 @@ jobs:
       run: mvn -B package --file LibraryProject/pom.xml
     - name: Run the Maven verify phase
       run: mvn --batch-mode --update-snapshots -f LibraryProject/pom.xml  verify
- 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Run Tests
-        run: mvn --file LibraryProject/pom.xml clean test
 
 
     
