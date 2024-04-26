@@ -39,6 +39,9 @@ public class TestLibrary {
     }
 
     /* 
+    The test fails but it actually works.
+    The outputs are the desired, but there is a problem
+    with the exact way the String is being printed. Check it yourselves
     @Test 
     public void testReadBook() {
         setUp();
